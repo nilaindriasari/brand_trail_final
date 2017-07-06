@@ -1,0 +1,499 @@
+body {
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  margin: 0;
+  line-height: 1.5;
+  background: url(images/collage-background-small.png) no-repeat 0% 55px;
+  background-attachment: fixed;
+}
+
+@media screen and (min-width:48em) {
+  body {
+    font-size: 16px;
+    background: url(images/collage-background.png) no-repeat -10% 55px;
+  }
+}
+
+p {
+  margin: 1.5em 0;
+  color: #373737;
+}
+
+h1 {
+  font-size: 1.5em;
+  line-height: 1;
+  margin: 1em 0;
+  margin-left: 1em;
+}
+
+h2 {
+  font-size: 1.375em;
+  line-height: 1.0909;
+  margin: 1.0909em 0;
+}
+
+a {
+  color: #373737;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #239AB9;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+hr {
+  border: .1px dashed #B7B7B7;
+}
+
+.copyright {
+  color: #5D5C5D;
+}
+
+.wrapper {
+  padding-top: 9em;
+}
+
+@media screen and (min-width: 48em) {
+  .wrapper {
+    padding-top: 0;
+  }
+}
+
+/* Layout
+------------------------------------------*/
+
+header, .slide, .slide1, .slide2, .slide3, .slide4, .slide5, .slide7 {
+  margin: 0 auto;
+  width: 88%;
+  max-width: 1080px;
+}
+
+@media screen and (max-width:20em) {
+header {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 1;
+  width: 100%;
+}
+}
+
+.slide, .slide1, .slide2, .slide3, .slide4, .slide5, .slide7 {
+  background: rgba(183, 183, 183, 0.4);
+  border-radius: 2em;
+  height: 80vh;
+  text-align: center;
+  padding: 1em;
+  margin-top: 2.5em;
+}
+
+.slide {
+  overflow: hidden;
+  padding: 0;
+  align-items: center;
+}
+.slide img {
+  height: 100%;
+}
+
+@media screen and (min-width: 48em) {
+  .slide1, .slide2, .slide3, .slide4, .slide7 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding-right: 2em;
+    height: 45vh;
+    margin-top: 0;
+  }
+  .slide5 {
+    height: 45vh;
+    text-align: left;
+    margin-top: 0;
+    padding: 1em 3em 1em 3em;
+  }
+  .slide {
+    overflow: hidden;
+    height: 50vh;
+    padding: 0;
+    margin-top: 0;
+    align-items: center;
+  }
+  .slide img {
+    margin-top: -5em;
+    width: 100%;
+    height: auto;
+  }
+  .main, .main2, .main3, .main4, .main7 {
+    width: 25%;
+    padding-left: 4.5em;
+  }
+  .secondary, .secondary2, .secondary3, .secondary4, .secondary7 {
+    box-sizing: border-box;
+    width: 60%;
+    padding-left: 1.5em;
+    /*border-left: 1px dotted #5D5C5D;*/
+  }
+}
+
+
+/*! Flickity v2.0.8
+http://flickity.metafizzy.co
+---------------------------------------------- */
+
+.flickity-enabled {
+  position: relative;
+}
+
+.flickity-enabled:focus {
+  outline: none;
+}
+
+.flickity-viewport {
+  overflow: hidden;
+  position: relative;
+  height: 100% fixed;
+}
+
+.flickity-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* draggable*/
+
+.flickity-enabled.is-draggable {
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+
+/* ---- previous/next buttons ---- */
+
+.flickity-prev-next-button {
+  position: absolute;
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  background: hsla(0, 0%, 100%, 0.75);
+  cursor: pointer;
+  /* vertically center */
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.flickity-prev-next-button:hover {
+  background: white;
+}
+
+.flickity-prev-next-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 5px #09F;
+}
+
+.flickity-prev-next-button:active {
+  opacity: 0.6;
+}
+
+.flickity-prev-next-button.previous {
+  left: 10px;
+}
+
+.flickity-prev-next-button.next {
+  right: 10px;
+}
+
+
+/* right to left */
+
+.flickity-rtl .flickity-prev-next-button.previous {
+  left: auto;
+  right: 10px;
+}
+
+.flickity-rtl .flickity-prev-next-button.next {
+  right: auto;
+  left: 10px;
+}
+
+.flickity-prev-next-button:disabled {
+  opacity: 0.3;
+  cursor: auto;
+}
+
+.flickity-prev-next-button svg {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  width: 60%;
+  height: 60%;
+}
+
+.flickity-prev-next-button .arrow {
+  fill: #333;
+}
+
+
+/* ---- page dots ---- */
+
+.flickity-page-dots {
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  line-height: 1;
+}
+
+@media screen and (min-width: 48em) {
+  .flickity-page-dots {
+    top: -30px;
+  }
+}
+
+.flickity-rtl .flickity-page-dots {
+  direction: rtl;
+}
+
+.flickity-page-dots .dot {
+  display: inline-block;
+  margin: 0 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+  background: #98DAEB;
+  border: 2px solid #6DC5DC;
+}
+
+.flickity-page-dots .dot.is-selected {
+  background: #6DC5DC;
+}
+
+
+/* button
+------------------------- */
+
+.button {
+  display: inline-block;
+  padding: 5px 15px;
+  margin-bottom: 10px;
+  background-color: #F8F8F8;
+  background-image: linear-gradient( hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.1));
+  border: 1px solid #CCC;
+  border-radius: 5px;
+}
+
+.button:enabled {
+  cursor: pointer;
+}
+
+.button:enabled:hover {
+  background-color: #8CF;
+}
+
+.button.is-checked, .button.is-selected {
+  background-color: #19F;
+  color: white;
+}
+
+.button:active {
+  color: white;
+  background-color: #59F;
+  box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
+}
+
+
+/* ---- style ---- */
+
+.carousel-cell {
+  width: 90%;
+  height: 25% fixed;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+@media screen and ( min-width: 48em) {
+  .carousel-cell {
+    width: 80%;
+    height: 100% fixed;
+    margin-right: 20px;
+  }
+}
+
+
+/* ---- footer ---- */
+
+small {
+  font-size: 9px;
+  font-weight: 100;
+  color: #B7B7B7;
+  display: block;
+  margin: .2em 0;
+}
+
+@media screen and (min-width: 48em){
+  small {
+    font-size: 10px;
+    margin: .2em 0;
+  }
+}
+
+.bottom {
+  background: #373737;
+  position: absolute;
+  width: 100%;
+  height: 7em;
+  display: flex;
+  align-items: center;
+  margin-top: 1em;
+}
+
+@media screen and (min-width: 48em){
+  .bottom {
+    height: 4em;
+  }
+.footer-text {
+  padding-left: 2em;
+}
+}
+
+.social-media {
+  width: 53%;
+}
+
+.footer-text {
+  width: 40%;
+  text-align: left;
+  padding-left: 1em;
+  border-left: 1px dotted #B7B7B7;
+}
+
+
+
+/*-- social media sprite--*/
+
+.social-channels {
+  margin-bottom: 0;
+  list-style: none;
+  padding: -.5em;
+  display: flex;
+  float: right;
+  margin-right: 0;
+  margin-top: 0;
+}
+
+.social-channels li {
+  margin-right: .5em;
+}
+
+.social-channels a {
+  width: 27px;
+  height: 27px;
+  display: block;
+  border-radius: 6px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: 1s;
+  /* hide text */
+  text-indent: 110%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.social-channels a:hover {
+  filter: none;
+}
+
+.email, .facebook, .instagram, .linkedin, .twitter, .youtube{
+	background: url(images/icon_sprites.png) no-repeat;
+}
+
+.email{
+	background-position: 0 0;
+	width: 27px;
+	height: 27px;
+}
+
+.facebook{
+	background-position: -27px 0;
+	width: 27px;
+	height: 27px;
+}
+
+.instagram{
+	background-position: -54px 0;
+	width: 27px;
+	height: 27px;
+}
+
+.linkedin{
+	background-position: 0 -27px ;
+	width: 27px;
+	height: 27px;
+}
+
+.twitter{
+	background-position: -27px -27px ;
+	width: 27px;
+	height: 27px;
+}
+
+.youtube{
+	background-position: -54px -27px ;
+	width: 27px;
+	height: 27px;
+}
+
+@media screen and ( min-width: 48em) {
+  .bottom {
+    position: fixed;
+    bottom: 0;
+  }
+}
+
+
+/* ---- Icons ---- */
+
+.material-icons1, .material-icons2 {
+  width: 7%;
+  margin-bottom: -.18em;
+}
+
+@media screen and ( min-width: 48em) {
+  .material-icons1,
+  .material-icons2 {
+    float: left;
+    width: 2.5%;
+    height: 2.5%;
+    margin-top: -.2em;
+    margin-right: .3em;
+  }
+}
