@@ -374,6 +374,7 @@ small {
   display: flex;
   align-items: center;
   margin-top: 1em;
+  padding: 0 .5em 0 .7em;
 }
 
 @media screen and (min-width: 48em){
@@ -411,7 +412,7 @@ small {
 }
 
 .social-channels li {
-  margin-right: .5em;
+  margin-right: .2em;
 }
 
 .social-channels a {
